@@ -1,0 +1,411 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme */
+body.dark-theme {
+    background-color: #1A1A1A;
+    color: #ECF0F1;
+}
+
+body.dark-theme header {
+    background: #2C3E50;
+}
+
+body.dark-theme .container, 
+body.dark-theme .flashcard, 
+body.dark-theme .quiz-container, 
+body.dark-theme .intro {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+}
+
+body.dark-theme input, 
+body.dark-theme select, 
+body.dark-theme button {
+    background-color: #34495E;
+    color: #ECF0F1;
+    border: 1px solid #2C3E50;
+}
+
+body.dark-theme input::placeholder, 
+body.dark-theme select::placeholder {
+    color: #BDC3C7;
+}
+
+body.dark-theme .btn-primary {
+    background: #3498DB;
+    color: #ECF0F1;
+}
+
+body.dark-theme .btn-secondary {
+    background: #2C3E50;
+    color: #ECF0F1;
+    border: 2px solid #3498DB;
+}
+
+body.dark-theme .btn-secondary:hover {
+    background: #3498DB;
+    color: #2C3E50;
+}
+
+body.dark-theme .flashcard button {
+    background: #E74C3C;
+    color: #ECF0F1;
+}
+
+body.dark-theme .flashcard button:hover {
+    background: #C0392B;
+}
+
+/* Header */
+header {
+    background: #2C3E50;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #3498DB;
+}
+
+header nav ul li button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+header nav ul li button:hover {
+    color: #3498DB;
+}
+
+/* Main*/
+main {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    padding: 40px 20px;
+}
+
+select{
+    border: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2C3E50;
+}
+
+body.dark-theme h1, 
+body.dark-theme h2 {
+    color: #ECF0F1;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+body.dark-theme p {
+    color: #BDC3C7;
+}
+
+.container {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .container {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #3498DB;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #3498DB;
+    border: 2px solid #3498DB;
+}
+
+.btn-secondary:hover {
+    background: #3498DB;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+/*Twoje fiszki */
+.flashcards-section {
+    margin-top: 40px;
+}
+
+.flashcards-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .flashcards-section .container {
+    background: #2C3E50;
+    color: #ECF0F1;
+}
+
+.flashcards-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2C3E50;
+}
+
+body.dark-theme .flashcards-section h2 {
+    color: #ECF0F1;
+}
+
+.flashcards-section form {
+    margin-bottom: 20px;
+}
+
+.flashcards-section form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+body.dark-theme .flashcards-section form input {
+    background-color: #34495E;
+    color: #ECF0F1;
+    border: 1px solid #2C3E50;
+}
+
+.flashcards-section form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#flashcard-message {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#theme-toggle{
+    position: relative;
+    left: 90%;
+}
+
+.flashcard-list {
+    margin-top: 20px;
+}
+
+.flashcard {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.dark-theme .flashcard {
+    background: #34495E;
+    border: 1px solid #2C3E50;
+}
+
+.flashcard strong {
+    font-size: 1.1rem;
+    color: #2C3E50;
+}
+
+body.dark-theme .flashcard strong {
+    color: #ECF0F1;
+}
+
+.flashcard button {
+    background: #E74C3C;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.flashcard button:hover {
+    background: #C0392B;
+}
+
+#flashcard-count {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+}
+
+body.dark-theme #flashcard-count {
+    color: #BDC3C7;
+}
+
+/* Quiz */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .quiz-container {
+    background: #2C3E50;
+    color: #ECF0F1;
+}
+
+.quiz-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.quiz-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.quiz-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+body.dark-theme .quiz-card input {
+    background-color: #34495E;
+    color: #ECF0F1;
+    border: 1px solid #2C3E50;
+}
+
+#next-btn {
+    margin-top: 20px;
+}
+
+#next-btn.correct {
+    background: linear-gradient(135deg, #27AE60, #2ECC71);
+    border: none;
+    box-shadow: 0 0 15px rgba(39, 174, 96, 0.4);
+}
+
+#next-btn.incorrect {
+    background: linear-gradient(135deg, #E74C3C, #C0392B);
+    border: none;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2C3E50;
+    color: #fff;
+    margin-top: auto;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    #theme-toggle{
+        position:static;
+        
+
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .add-flashcard form, .quiz-container, .flashcards-section .container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Flashcard Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/add">Twoje fiszki</a></li>
+                <li><a href="/quiz">Rozpocznij quiz</a></li>
+                <li><button id="theme-toggle">Zmień motyw</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="quiz">
+            <div class="container">
+                <h1>Rozpocznij quiz</h1>
+                <div id="quiz-setup" class="quiz-setup">
+                    <label for="category-select">Wybierz kategorię:</label>
+                    <select id="category-select"></select> <br>
+                    <label for="question-count">Wybierz liczbę pytań:</label>
+                    <select id="question-count">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                    <button id="start-quiz-btn" class="btn-primary">Rozpocznij quiz</button>
+                </div>
+                <div id="quiz-container" class="quiz-container" style="display: none;"></div>
+                <div id="score" class="score" style="display: none;"></div>
+                <button id="next-btn" class="btn-primary" style="display: none;">Następne pytanie</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Flashcard Pro</p>
+        </div>
+    </footer>
+
+    <script src="quiz.js"></script>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const isDarkTheme = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+        });
+    });
+</script>
+</html>
